@@ -1,5 +1,7 @@
 # Ultralytics YOLO 🚀, GPL-3.0 license
 
+# Ultralytics YOLO 🚀, GPL-3.0 license
+
 import hydra
 import torch
 
@@ -62,24 +64,17 @@ def compute_color_for_labels(label):
     """
     Simple function that adds fixed color depending on the class
     """
-    car_count=0
-    motor_count=0
-    truck__count=0
-    bus_count=0
     if label == 0: #person
         color = (85,45,255)
     elif label == 2: # Car
         color = (222,82,175)
-        car_count+=1
     elif label == 3:  # Motobike
         color = (0, 204, 255)
-        motor_count+=1
     elif label == 5:  # Bus
         color = (0, 149, 255)
-        bus_count+=1
     else:
         color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
-    return tuple([color, bus_count, car_count, motor_count])
+    return tuple(color)
 
 
 
