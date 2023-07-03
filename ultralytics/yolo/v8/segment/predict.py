@@ -79,7 +79,7 @@ def compute_color_for_labels(label):
         bus_count+=1
     else:
         color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
-    return tuple(color,bus_count,car_count,motor_count)
+    return tuple([color, bus_count, car_count, motor_count])
 
 
 
